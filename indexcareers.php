@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+     <title>Review</title>
+     <meta charset="utf-8">
+     <link rel="icon" href="images/favicon.ico">
+     <link rel="shortcut icon" href="images/favicon.ico" />
+     <link rel="stylesheet" href="css/style.css">
+     <script src="js/jquery.js"></script>
+     <script src="js/jquery-migrate-1.1.1.js"></script>
+     <script src="js/jquery.equalheights.js"></script>
+     <script src="js/jquery.ui.totop.js"></script>
+     <script src="js/jquery.easing.1.3.js"></script>
+     <script>
+        $(document).ready(function(){
+
+          $().UItoTop({ easingType: 'easeOutQuart' });
+        }) 
+     </script>
+     </head>
+     <body  class="">
+  <?php
+session_start();
+?>
+<!--==============================header=================================-->
+ <header> 
+  <div class="container_12">
+   <div class="grid_12"> 
+    
+  
+    <div class="menu_block">
+
+
+     <nav id="bt-menu" class="bt-menu">
+        <a href="#" class="bt-menu-trigger"><span>Menu</span></a>
+        <ul>
+          <li class="current bt-icon "><a href="index.php">Home</a></li>
+         <li class="bt-icon"><a href="index-1.php">About</a></li>
+         <li class="bt-icon"><a href="#">	</a></li>
+         <li class="bt-icon"><a href="#">	</a></li>
+         <li class="bt-icon"><a href="indexcareers.php">   Careers</a></li>
+         <?php
+		
+		 if  (isset($_SESSION["valid"]) and ($_SESSION['valid']==1)){
+		 ECHO '<li class="bt-icon"><a href="logout.php">Logout</a></li>';}
+		 else {
+		 ECHO '<li class="bt-icon"><a href="dummylogin.php">      Login to access all features</a></li>';
+		 }
+		 ?>
+        </ul>
+      </nav>
+
+    
+ <div class="clear"></div>
+</div>
+<div class="clear"></div>
+          </div>
+      </div>
+</header>
+
+<!--==============================Content=================================-->
+
+<div class="content"><div class="ic"></div>
+  <div class="container_12">
+    <div class="grid_8">  
+      <h3 class="">Careers</h3>
+      <div class="post">
+        <img src="images/chef.jpg" alt="" class="img_inner fleft" width="200px" height="300px">
+        <div class="extra_wrapper">
+          <div class="title col3"><a href="http://en.wikipedia.org/wiki/Chef#Chef_de_cuisine.2C_executive_chef.2C_chef_manager.2C_head_chef.2C_and_master_chef">Executive Chef</a></div>
+          <p class="col1">
+            Require an experienced chef with minimum 4 years experience in asian cuisine.<br>
+			The chef has to run a team of 50 members and hence must be a team player<br>
+          </p>
+          <br>
+          <a href="mailto:ankithasri22@gmail.com?cc=deeptipandey111@gmail.com&bcc=ankithasri22@gmail.com&subject=Chef%20Resume" target="_top">Send us your Resume!</a>
+        </div>
+      </div>
+      <div class="post">
+        <img src="images/man.jpg" alt="" class="img_inner fleft" width="200px" height="300px">
+        <div class="extra_wrapper">
+          <div class="title col3"><a href="http://www.hospitalityguild.com/Careers/01_RM_duties.htm">Manager</a></div>
+          <p class="col1">
+            Require a manger with 5 years of experience.<br>
+			Job profile will include :<br>
+			- Coordinating the entire operation of the restaurant during scheduled shifts.<br>
+			- Taking responsibility for the business performance of the restaurant.<br>
+          </p>
+          <br>
+          <a href="mailto:ankithasri22@gmail.com?cc=deeptipandey111@gmail.com&bcc=ankithasri22@gmail.com&subject=Manager%20Resume" target="_top">Send us your Resume!</a>
+        </div>
+      </div>
+    </div>  
+    <div class="grid_3 prefix_1">
+      
+    <h3 class="head3">Increasing careers!</h3>
+	<canvas id="myCanvas" width="400" height="420" >
+Your browser does not support the HTML5 canvas tag.</canvas>
+   <script>
+//really bad coding happening, fliss change madi
+var points = [100,300,200,250,300,100];
+ var i=0;
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+var j=0;
+//drawing y axis
+ctx.moveTo(0,0);
+ctx.lineTo(0,400);
+ctx.stroke();
+//drawing x axis
+ctx.moveTo(0,400);
+ctx.lineTo(400,400);
+ctx.stroke();
+//marking points on y axis
+ctx.fillText("Number of Employees",0,10);
+ctx.fillText("3000",0,100);
+ctx.fillText("2000",0,200);
+ctx.fillText("1000",0,300);
+ctx.fillText("0",0,400);
+//marking points on x axis
+ctx.fillText("2014",300,410);
+ctx.fillText("2013",200,410);
+ctx.fillText("2012",100,410);
+ctx.fillText("Years",350,410);
+ctx.moveTo(100,300);
+while(j<points.length)
+{
+ctx.lineTo(points[j],points[j+1]);
+ctx.stroke();
+muh=points[j+1];
+ccc="("+points[j]+","+ muh +")"
+ //marking point
+ctx.moveTo(points[j],points[j+1]);
+j=j+2;
+}
+
+
+
+</script>
+    </div>
+  </div>
+</div>
+
+<!--==============================footer=================================-->
+
+<footer>    
+  <div class="container_12">
+    <div class="grid_6 prefix_3">
+      <a href="index.php" class="f_logo"><img src="images/f_logo.png" alt=""></a>
+      <div class="copy">
+       <br> Website   designed by Ankitha and Deepti</a>
+      </div>
+    </div>
+  </div>
+</footer>
+       <script>
+      $(document).ready(function(){ 
+         $(".bt-menu-trigger").toggle( 
+          function(){
+            $('.bt-menu').addClass('bt-menu-open'); 
+          }, 
+          function(){
+            $('.bt-menu').removeClass('bt-menu-open'); 
+          } 
+        ); 
+      }) 
+    </script>
+</body>
+
+</html>
